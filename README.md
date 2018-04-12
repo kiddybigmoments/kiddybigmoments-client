@@ -1,4 +1,4 @@
-# Kiddybigmoments
+# Kiddybigmoments [![Build Status](https://travis-ci.org/kiddybigmoments/kiddybigmoments-client.svg?branch=master)](https://travis-ci.org/kiddybigmoments/kiddybigmoments-client)
 
 > By nodebusters
 
