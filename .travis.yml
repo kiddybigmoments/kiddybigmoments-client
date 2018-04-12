@@ -1,3 +1,45 @@
+os:
+- linux
+services:
+- docker
 language: node_js
 node_js:
-  - '9'
+- '9'
+addons:
+  apt:
+    sources:
+    - google-chrome
+    packages:
+    - google-chrome-stable
+cache:
+  yarn: true
+  directories:
+  - "$HOME/.yarn-cache"
+  - node_modules
+branches:
+  only:
+  - master
+before_install:
+- export CHROME_BIN=/usr/bin/google-chrome
+- export DISPLAY=:99.0
+- sh -e /etc/init.d/xvfb start
+- curl -o- -L https://yarnpkg.com/install.sh | bash
+- export PATH=$HOME/.yarn/bin:$PATH
+- yarn global add @angular/cli
+install:
+- yarn install
+script:
+- ng test --watch false
+- ng e2e
+notifications:
+  webhooks:
+    on_success: change
+    on_failure: always
+    on_start: false
+deploy:
+  provider: heroku
+  api_key:
+    secure: NmHfqhYrxIaO8xXfq2CyPL6LovdnJimPfPmRg2HbPA60PVM4R/7mDn+qGYoDYlc+DyIqBXZ99qFl/fM7jKr0yaHsa9QAJKoLIgrYIPfRgA3k+/F/tOkRMvm/W4McFxrcegmV2zo8ahQv2ST7z5lKoZheC51b7d0J+50EzT3zgLaa8ZYu1YcK6b7B1UjNHLJx8+BXGrq508PN/Lbbo/bpCwTBxJYbbBCzUdJMyHdRMZgT9WEJw/+qLj63TeI9h23h0yJPeky4XvG7tu1SQ6vf6XYzs34nXzsPpb9PmLMIS58UzV18WUkhAg0HW3bHrrEqo+8swl1Dysnbj/tH6ZG6bAZhQjdQw3SZzDtP+m8ybnbiGLWeG4DppcZYyTbEIMVwsGxMWfGAbF/RxT/v+sd79eYuS67KrfYgsbd4VOUjy7y6caEUoi+rBV2qaHGL0J7VkM5WDG6cBeIMs4uKl6YUh+j4Q0uJZAUozVfCwN31OaUSKtzwa3KZ0CU9Y2AmO/8e+TlARgsK01prVepWs1fbs51u4l8Z7OHtQXeJ28aVVk9rS3fmvTQQLkFQ7iBspI8P3S0IpGcPYLP4/FZfHN83nu14cQStLP3wsgxy8YurVpYJ7+uv4UHxILdrKfy7ndDHMXmoDYtOznzQaEBl0n3SnZ/pfLdHmcXhSca+Khctfpg=
+  app: kiddybigmoments-client
+  on:
+    repo: kiddybigmoments/kiddybigmoments-client
