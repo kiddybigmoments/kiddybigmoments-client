@@ -1,18 +1,18 @@
 import { NgModule } from '@angular/core'
 import { RouterModule } from '@angular/router'
 
-import { DeletePhotosComponentComponent } from '../delete-photos-component/delete-photos-component.component'
+import { PhotoViewComponentComponent } from '../photo-view-component/photo-view-component.component'
 
 @NgModule({
   imports: [
     RouterModule.forRoot([
       {
-        path: 'delete-photos',
-        component: DeletePhotosComponentComponent
+        path: 'photo-view',
+        component: PhotoViewComponentComponent
       },
       {
         path: '**',
-        redirectTo: '/delete-photos'
+        redirectTo: '/photos'
       }
     ])
   ],
