@@ -12,7 +12,7 @@ import { PhotoViewComponentComponent } from '../photo-view-component/photo-view-
       },
       {
         path: '**',
-        redirectTo: '/photos'
+        redirectTo: '/photo-view'
       }
     ])
   ],
