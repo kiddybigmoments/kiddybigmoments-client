@@ -9,12 +9,13 @@ nav {
     border: none;
     height: 60px;
     background: url('../../assets/app_img/nav-background.jpg') no-repeat fixed;
+    opacity: 0.75;
 }
 
 .navbar-header {
     width: 250px;
     color: #FFF;
-
+    text-transform: uppercase;
 }
 
 
