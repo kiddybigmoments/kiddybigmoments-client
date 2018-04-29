@@ -1,22 +1,38 @@
-import { BrowserModule } from '@angular/platform-browser'
-import { NgModule } from '@angular/core'
-import { SlideMenuModule } from 'cuppa-ng2-slidemenu/cuppa-ng2-slidemenu'
+import { BrowserModule } from '@angular/platform-browser';
+import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
+import { HttpModule } from '@angular/http';
+import { AlertModule } from 'ng2-bootstrap';
+import { RouterModule } from '@angular/router';
 
-import { AppComponent } from './app.component'
-import { PhotoViewComponentComponent } from './photo-view-component/photo-view-component.component'
-import { AppRoutingModule } from './app-routing/app-routing.module'
-import { HeaderComponent } from './header/header.component'
-import { FooterComponent } from './footer/footer.component'
+import { AppComponent } from './app.component';
+import { NavbarComponent } from './navbar/navbar.component';
+import { GalleryComponent } from './gallery/gallery.component';
+import { ImageService } from './image/shared/image.service';
+import { ImageFilterPipe } from './image/shared/filter.pipe';
+import { ImageSearchPipe } from './image/shared/search.pipe';
+import { ImageDetailComponent } from './image/image-detail.component';
+import { appRoutes } from '../routes';
+import { SearchComponent } from './search/search.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    PhotoViewComponentComponent,
-    HeaderComponent,
-    FooterComponent
+    NavbarComponent,
+    GalleryComponent,
+    ImageFilterPipe,
+    ImageSearchPipe,
+    ImageDetailComponent,
+    SearchComponent
   ],
-  imports: [BrowserModule, AppRoutingModule, SlideMenuModule],
-  providers: [],
+  imports: [
+    BrowserModule,
+    FormsModule,
+    HttpModule,
+    AlertModule.forRoot(),
+    RouterModule.forRoot(appRoutes)
+  ],
+  providers: [ImageService, ImageFilterPipe, ImageSearchPipe],
   bootstrap: [AppComponent]
 })
-export class AppModule {}
+export class AppModule { }

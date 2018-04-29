@@ -1,0 +1,14 @@
+
+<div class="row">
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container-fluid">
+            <div class="navbar-header">
+              <span>{{title}}</span>
+            </div>
+            <ul class="nav navbar-nav">
+                <li routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}"><a [routerLink]="['/gallery']">Home</a></li>
+                <li routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}"><a [routerLink]="['/search']">Search</a></li>
+            </ul>
+        </div>
+    </nav>
+</div>
