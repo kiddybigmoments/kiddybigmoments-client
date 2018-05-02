@@ -10,6 +10,9 @@ import { HeaderComponent } from './components/header/header.component'
 import { FooterComponent } from './components/footer/footer.component'
 import { LoginFormComponent } from './components/login-form/login-form.component'
 import { NavbarComponent } from './components/navbar/navbar.component'
+import { SignUpComponent } from './components/user/sign-up/sign-up.component'
+import { SignInComponent } from './components/user/sign-in/sign-in.component'
+import { UserComponent } from './components/user/user.component'
 
 @NgModule({
   declarations: [
@@ -17,7 +20,10 @@ import { NavbarComponent } from './components/navbar/navbar.component'
     HeaderComponent,
     FooterComponent,
     LoginFormComponent,
-    NavbarComponent
+    NavbarComponent,
+    SignUpComponent,
+    SignInComponent,
+    UserComponent
   ],
   imports: [
     BrowserModule,
