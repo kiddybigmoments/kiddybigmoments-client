@@ -1,6 +1,6 @@
 import { AppPage } from './app.po';
 
-describe('kiddybigmoments App', () => {
+describe('photo-gallery App', () => {
   let page: AppPage;
 
   beforeEach(() => {

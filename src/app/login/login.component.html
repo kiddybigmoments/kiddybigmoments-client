@@ -1,0 +1,35 @@
+<div class="background-login container-fluid">
+    <div class="row justify-content-center">
+      <div class=" col-sm-4 ">
+        <div class="card panel-default text-center border-4">
+          <div class="card-header " style="font-size:12pt">INTRODUZCA SUS DATOS DE ACCESO:
+
+          </div>
+            <div class="card-body panel-body">
+              <div >
+                <input type="text" placeholder="Usuario" #user/>
+
+              </div>
+
+              <div >
+                <input type="password" placeholder="Contraseña" #pass/>
+
+              </div>
+
+              <div class="alert alert-danger" *ngIf="error" role="alert">
+                Usuario o Contraseña no valido
+              </div>
+              <h6></h6>
+              <button type="button" class="btn btn-primary boton" (click)="gotoPage(user.value,pass.value)">LOGIN</button>
+               </div>
+        </div>
+      </div>
+  </div>
+
+  </div>
+  <footer class="footer">
+      <div class="container-fluid">
+        <span class="text-muted">Aviso legal / Política de privacidad   |  Contacto   |   Términos y condiciones generales</span>
+      </div>
+    </footer>
+  <router-outlet></router-outlet>

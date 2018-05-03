@@ -1,3 +1,4 @@
 export const environment = {
-  production: true
+  production: true,
+  rutaApi: 'http://servidordeproduccion:8000'
 };

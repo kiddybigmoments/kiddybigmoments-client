@@ -1,10 +1,25 @@
-# Kiddybigmoments [![Build Status](https://travis-ci.org/kiddybigmoments/kiddybigmoments-client.svg?branch=master)](https://travis-ci.org/kiddybigmoments/kiddybigmoments-client)
+## DEMO
 
-> By nodebusters
 
-## Develop
+## Installation
 
-```
-npm install # install dependencies
-npm run dev # run a server that watches for changes in files
-```
+Assuming you have node, npm and git installed:
+
+1. In Git Bash:
+    - $ npm install
+
+2. Navigate to your src folder in CMD
+
+3. Start application by typing npm start
+
+4. Open http://localhost:4200/ in your browser.
+
+5. If neccessary install bootstrap:
+npm install bootstrap --save
+import the css in .angular-cli.json:
+    "...
+        "styles": [
+            "../node_modules/bootstrap/dist/css/bootstrap.min.css",
+            "styles.scss"
+        ]
+    ..."
