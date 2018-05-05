@@ -1,25 +1,24 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { async, ComponentFixture, TestBed } from '@angular/core/testing'
 
-import { NotauthorizedComponent } from './notauthorized.component';
+import { NotauthorizedComponent } from './notauthorized.component'
 
 describe('NotauthorizedComponent', () => {
-  let component: NotauthorizedComponent;
-  let fixture: ComponentFixture<NotauthorizedComponent>;
+  let component: NotauthorizedComponent
+  let fixture: ComponentFixture<NotauthorizedComponent>
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ NotauthorizedComponent ]
-    })
-    .compileComponents();
-  }));
+      declarations: [NotauthorizedComponent]
+    }).compileComponents()
+  }))
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(NotauthorizedComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
-  });
+    fixture = TestBed.createComponent(NotauthorizedComponent)
+    component = fixture.componentInstance
+    fixture.detectChanges()
+  })
 
   it('should create', () => {
-    expect(component).toBeTruthy();
-  });
-});
+    expect(component).toBeTruthy()
+  })
+})
