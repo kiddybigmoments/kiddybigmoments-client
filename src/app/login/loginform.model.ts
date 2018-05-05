@@ -1,5 +1,5 @@
 export class LoginForm {
-    authToken: string;
-    user: string;
-    pass: string;
+  authToken: string
+  user: string
+  pass: string
 }
