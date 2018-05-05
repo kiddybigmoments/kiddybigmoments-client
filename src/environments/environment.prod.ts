@@ -1,4 +1,4 @@
 export const environment = {
   production: true,
-  rutaApi: 'http://servidordeproduccion:8000'
+  rutaApi: 'https://api.kiddybigmoments.site/api/v1'
 };

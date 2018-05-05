@@ -1,32 +1,35 @@
 
-import { Component, OnChanges, Input } from "@angular/core";
+import { Component, OnChanges, OnInit, Input } from "@angular/core";
 
-import { ImageService } from "../image/shared/image.service"
+import {PhotoApiService} from '../services/photo-api.service';
 
 @Component({
     selector: 'app-gallery',
     templateUrl: './gallery.component.html',
     styleUrls: ['./gallery.component.css']
 })
-export class GalleryComponent implements OnChanges {
-    
+export class GalleryComponent implements OnChanges, OnInit {
+
     title = 'Click on an image for full size';
-    @Input() filterBy?: string = 'all';
+    @Input() filterBy? = 'all';
 
     visibleImages: any[] = [];
 
-    constructor(private imageService: ImageService) {
-        this.visibleImages = this.imageService.getImages();
+    private toggle = false;
+    classes: string[] = [];
+    show = false;
+
+    constructor(private photoApiService: PhotoApiService) {}
+
+    ngOnInit() {
+      this.photoApiService.getPhotos().subscribe(response => {
+          this.visibleImages = response.results;
+      });
     }
 
     ngOnChanges() {
-        this.visibleImages = this.imageService.getImages();
+        this.photoApiService.getPhotos().subscribe(console.log);
     }
-
-    private toggle : boolean = false;
-
-    classes: string[] = [];
-    show: boolean = false;
 
     clickEvent() {
         console.log('sidebarToggled');
@@ -38,5 +41,4 @@ export class GalleryComponent implements OnChanges {
             this.classes.push('not-active1');
         }
     }
-
 }

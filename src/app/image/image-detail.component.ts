@@ -1,6 +1,6 @@
 
 import { Component, OnInit } from "@angular/core";
-import { ImageService } from "./shared/image.service";
+import { PhotoApiService } from '../services/photo-api.service';
 import { ActivatedRoute } from '@angular/router';
 import { Location } from "@angular/common";
 
@@ -10,17 +10,16 @@ import { Location } from "@angular/common";
     styleUrls: ['./image-detail.component.css']
 })
 export class ImageDetailComponent implements OnInit {
-    
-    image:any;
+
+    image :any;
+
     constructor(
-        private imageService: ImageService, 
+        private photoApiService: PhotoApiService,
         private route: ActivatedRoute,
         private location: Location) {}
 
     ngOnInit() {
-        this.image = this.imageService.getImage(
-            +this.route.snapshot.params['id']
-        )
+        this.photoApiService.getPhoto(this.route.snapshot.params['id']).subscribe(console.log);
     }
 
     goBack(): void {

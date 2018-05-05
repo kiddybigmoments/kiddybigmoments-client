@@ -1,6 +1,6 @@
 import { Component, OnChanges, Input } from '@angular/core';
 
-import { ImageService } from '../image/shared/image.service';
+import { PhotoApiService } from '../services/photo-api.service';
 
 @Component({
     selector: 'search',
@@ -15,12 +15,12 @@ export class SearchComponent implements OnChanges{
 
     searchImages: any[] = [];
 
-    constructor(private imageService: ImageService) {
-        this.searchImages = this.imageService.getImages();
+    constructor(private photoApiService: PhotoApiService) {
+        this.photoApiService.getPhotos().subscribe(console.log)
     }
 
     ngOnChanges() {
-        this.searchImages = this.imageService.getImages();
+        this.photoApiService.getPhotos().subscribe(console.log)
     }
 
 }
