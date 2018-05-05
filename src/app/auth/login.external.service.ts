@@ -21,12 +21,12 @@ export class LoginExternalService {
     this.formulario.user = user
     this.formulario.pass = pass
     const req = this._http.post<LoginResponse>(
-      `${environment.rutaApi}/auth/login`,
+      `${environment.rutaApi}/token-auth/`,
       { username: user, password: pass }
     )
     req.subscribe(
       res => {
-        this.formulario.authToken = 'Beared ' + res.token
+        this.formulario.authToken = 'Bearer ' + res.token
 
         this.acceso.next(this.formulario)
         this.authService.actualizarAutorizacion(

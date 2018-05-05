@@ -9,7 +9,9 @@ import { HttpClientModule, HttpClient } from '@angular/common/http'
 import { AppComponent } from './app.component'
 import { NavbarComponent } from './navbar/navbar.component'
 import { GalleryComponent } from './gallery/gallery.component'
-import { PhotoApiService } from './services/photo-api.service'
+import { PhotoService } from './photos/photo.service'
+import { ApiService } from './api/api.service'
+import { AuthService } from './auth/auth.service'
 import { ImageFilterPipe } from './image/shared/filter.pipe'
 import { ImageSearchPipe } from './image/shared/search.pipe'
 import { ImageDetailComponent } from './image/image-detail.component'
@@ -40,7 +42,13 @@ import { LoginComponent } from './login/login.component'
     AlertModule.forRoot(),
     RouterModule.forRoot(appRoutes)
   ],
-  providers: [PhotoApiService, ImageFilterPipe, ImageSearchPipe],
+  providers: [
+    PhotoService,
+    ImageFilterPipe,
+    ImageSearchPipe,
+    ApiService,
+    AuthService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule {}

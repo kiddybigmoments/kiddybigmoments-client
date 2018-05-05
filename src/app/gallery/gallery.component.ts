@@ -1,6 +1,6 @@
-import { Component, OnChanges, OnInit, Input } from '@angular/core'
+import { Component, OnInit, Input } from '@angular/core'
 
-import { PhotoApiService } from '../services/photo-api.service'
+import { PhotoService } from '../photos/photo.service'
 import { ApiResponse, Photo } from '../models'
 
 @Component({
@@ -8,7 +8,7 @@ import { ApiResponse, Photo } from '../models'
   templateUrl: './gallery.component.html',
   styleUrls: ['./gallery.component.css']
 })
-export class GalleryComponent implements OnChanges, OnInit {
+export class GalleryComponent implements OnInit {
   title = 'Click on an image for full size'
   @Input() filterBy? = 'all'
 
@@ -18,13 +18,9 @@ export class GalleryComponent implements OnChanges, OnInit {
   classes: string[] = []
   show = false
 
-  constructor(private photoApiService: PhotoApiService) {}
+  constructor(private photoApiService: PhotoService) {}
 
   ngOnInit() {
-    this.loadPhotos()
-  }
-
-  ngOnChanges() {
     this.loadPhotos()
   }
 
@@ -37,7 +33,6 @@ export class GalleryComponent implements OnChanges, OnInit {
   }
 
   clickEvent() {
-    console.log('sidebarToggled')
     this.classes.splice(this.classes.length - 1, 1)
     this.show = !this.show
     if (this.show) {

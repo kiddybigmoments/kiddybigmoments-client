@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core'
-import { PhotoApiService } from '../services/photo-api.service'
+import { PhotoService } from '../photos/photo.service'
 import { ActivatedRoute } from '@angular/router'
 import { Location } from '@angular/common'
 import { ApiResponse, Photo } from '../models'
@@ -13,13 +13,13 @@ export class ImageDetailComponent implements OnInit {
   image: Photo
 
   constructor(
-    private photoApiService: PhotoApiService,
+    private photoService: PhotoService,
     private route: ActivatedRoute,
     private location: Location
   ) {}
 
   ngOnInit() {
-    this.photoApiService
+    this.photoService
       .getPhoto(this.route.snapshot.params.id)
       .subscribe((response: Photo) => {
         if (response) {

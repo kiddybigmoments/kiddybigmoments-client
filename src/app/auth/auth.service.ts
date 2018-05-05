@@ -24,6 +24,6 @@ export class AuthService {
   }
 
   getAuthorizationHeader() {
-    return this.formulario.authToken
+    return this.formulario.authToken || ''
   }
 }

@@ -1,24 +1,25 @@
-import { Component, OnChanges, Input } from '@angular/core'
+import { Component, OnInit, Input } from '@angular/core'
 
-import { PhotoApiService } from '../services/photo-api.service'
+import { PhotoService } from '../photos/photo.service'
+import { ApiResponse, Photo } from '../models'
 
 @Component({
   selector: 'search',
   templateUrl: './search.component.html',
   styleUrls: ['./search.component.css']
 })
-export class SearchComponent implements OnChanges {
+export class SearchComponent implements OnInit {
   title = 'Start typing to search images by caption ...'
 
   @Input() searchBy?: string = 'all'
 
-  searchImages: any[] = []
+  searchImages: Photo[] = []
 
-  constructor(private photoApiService: PhotoApiService) {
-    this.photoApiService.getPhotos().subscribe(console.log)
-  }
+  constructor(private photoService: PhotoService) {}
 
-  ngOnChanges() {
-    this.photoApiService.getPhotos().subscribe(console.log)
+  ngOnInit() {
+    this.photoService.getPhotos().subscribe((response: ApiResponse<Photo>) => {
+      this.searchImages = response.results
+    })
   }
 }
