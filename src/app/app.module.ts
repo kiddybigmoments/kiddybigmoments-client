@@ -24,11 +24,6 @@ import { appRoutes } from '../routes';
 import { SearchComponent } from './components/search/search.component';
 import { HomeComponent } from './components/home/home.component';
 
-
-
-
-
-
 @NgModule({
   declarations: [
     AppComponent,
