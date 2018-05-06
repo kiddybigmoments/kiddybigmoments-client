@@ -6,7 +6,15 @@ import { AlertModule } from 'ng2-bootstrap';
 import { RouterModule } from '@angular/router';
 
 import { AppComponent } from './app.component';
-import { NavbarComponent } from './components/navbarold/navbar.component';
+import { HeaderComponent } from './components/header/header.component';
+import { FooterComponent } from './components/footer/footer.component';
+import { LoginFormComponent } from './components/login-form/login-form.component';
+import { NavbarComponent } from './components/navbar/navbar.component';
+import { SignUpComponent } from './components/user/sign-up/sign-up.component';
+import { SignInComponent } from './components/user/sign-in/sign-in.component';
+import { UserComponent } from './components/user/user.component';
+
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap'
 import { GalleryComponent } from './components/gallery/gallery.component';
 import { ImageService } from './components/image/shared/image.service';
 import { ImageFilterPipe } from './components/image/shared/filter.pipe';
@@ -17,9 +25,14 @@ import { SearchComponent } from './components/search/search.component';
 import { HomeComponent } from './components/home/home.component';
 
 
+
+
+
+
 @NgModule({
   declarations: [
     AppComponent,
+
     NavbarComponent,
     GalleryComponent,
     ImageFilterPipe,
@@ -27,13 +40,19 @@ import { HomeComponent } from './components/home/home.component';
     ImageDetailComponent,
     SearchComponent,
     HomeComponent,
-
+    HeaderComponent,
+    FooterComponent,
+    LoginFormComponent,
+    SignUpComponent,
+    SignInComponent,
+    UserComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpModule,
     AlertModule.forRoot(),
+    NgbModule.forRoot(),
     RouterModule.forRoot(appRoutes)
   ],
   providers: [ImageService, ImageFilterPipe, ImageSearchPipe],
