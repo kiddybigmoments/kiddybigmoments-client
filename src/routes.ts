@@ -10,5 +10,5 @@ export const appRoutes: Routes = [
     { path: 'gallery', component: GalleryComponent},
     { path: 'image/:id', component: ImageDetailComponent},
     { path: 'search', component: SearchComponent},
-    { path: '', redirectTo: 'gallery', pathMatch: 'full'},
+    { path: '', redirectTo: 'home', pathMatch: 'full'},
 ]
