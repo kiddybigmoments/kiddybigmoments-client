@@ -1,5 +1,9 @@
 import { Injectable } from '@angular/core'
-import { HttpClient, HttpHeaders } from '@angular/common/http'
+import {
+  HttpClient,
+  HttpHeaders,
+  HttpErrorResponse
+} from '@angular/common/http'
 import { Observable } from 'rxjs/Observable'
 
 import { AuthService } from '../auth/auth.service'
@@ -8,6 +12,12 @@ import { environment } from '../../environments/environment'
 @Injectable()
 export class ApiService {
   constructor(private _http: HttpClient, private auth: AuthService) {}
+
+  static handleHttpError(error: HttpErrorResponse) {
+    if (error.status === 401) {
+      console.error('Unauthorized') // TODO: Redirect to login
+    }
+  }
 
   private headers(): HttpHeaders {
     return new HttpHeaders().set(

@@ -11,8 +11,7 @@
 ## Install
 
 ```sh
-npm install            # Install dependencies
-npm run postinstall    # Build for production (dist folder)
+npm install            # Install dependencies and build (postinstall)
 npm start              # Serve dist folder
 ```
 

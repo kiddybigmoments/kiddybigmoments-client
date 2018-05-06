@@ -11,6 +11,10 @@ import { ApiService } from '../api/api.service'
 export class PhotoService {
   constructor(private _http: HttpClient, private api: ApiService) {}
 
+  handleHttpError(error: any) {
+    return ApiService.handleHttpError(error)
+  }
+
   getPhotos(criteria: object = {}): Observable<ApiResponse<Photo>> {
     // TODO: Filter by criteria
     return this.api.get<ApiResponse<Photo>>('photos')

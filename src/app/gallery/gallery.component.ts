@@ -18,18 +18,18 @@ export class GalleryComponent implements OnInit {
   classes: string[] = []
   show = false
 
-  constructor(private photoApiService: PhotoService) {}
+  constructor(private photoService: PhotoService) {}
 
   ngOnInit() {
     this.loadPhotos()
   }
 
   loadPhotos(criteria: object = {}) {
-    this.photoApiService
+    this.photoService
       .getPhotos(criteria)
       .subscribe((response: ApiResponse<Photo>) => {
         this.visibleImages = response.results
-      })
+      }, this.photoService.handleHttpError)
   }
 
   clickEvent() {

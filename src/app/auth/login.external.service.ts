@@ -21,7 +21,7 @@ export class LoginExternalService {
     this.formulario.user = user
     this.formulario.pass = pass
     const req = this._http.post<LoginResponse>(
-      `${environment.apiUrl}/token-auth/`,
+      `${environment.apiUrl}/get-token/`,
       { username: user, password: pass }
     )
     req.subscribe(
