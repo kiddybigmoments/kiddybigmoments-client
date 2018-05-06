@@ -1,8 +1,8 @@
 
-import { Component, OnInit } from "@angular/core";
-import { ImageService } from "./shared/image.service";
+import { Component, OnInit } from '@angular/core';
+import { ImageService } from './shared/image.service';
 import { ActivatedRoute } from '@angular/router';
-import { Location } from "@angular/common";
+import { Location } from '@angular/common';
 
 @Component({
     selector: 'image-detail',
@@ -10,10 +10,10 @@ import { Location } from "@angular/common";
     styleUrls: ['./image-detail.component.css']
 })
 export class ImageDetailComponent implements OnInit {
-    
+
     image:any;
     constructor(
-        private imageService: ImageService, 
+        private imageService: ImageService,
         private route: ActivatedRoute,
         private location: Location) {}
 
