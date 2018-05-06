@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core';
 import 'rxjs/add/operator/map';
 import { Observable } from 'rxjs/Observable';
 import { Subject } from 'rxjs/Subject';
-import {LoginForm} from '../login/loginform.model';
+import {LoginForm} from '../components/login/loginform.model';
 
 @Injectable()
 export class AuthService {

@@ -1,7 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Router } from '@angular/router';
-import { LoginExternalService } from '../services/login.external.service';
-
+import { LoginExternalService } from '../../services/login.external.service';
 import { LoginForm } from './loginform.model';
 import { Subscription } from 'rxjs/Subscription';
 

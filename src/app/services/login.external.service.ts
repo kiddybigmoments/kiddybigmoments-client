@@ -7,7 +7,7 @@ import 'rxjs/add/operator/map';
 import './../interfaces/login.response.interfaz';
 import { Observable } from 'rxjs/Observable';
 import { Subject } from 'rxjs/Subject';
-import { LoginForm } from '../login/loginform.model';
+import { LoginForm } from '../components/login/loginform.model';
 
 @Injectable()
 export class LoginExternalService {

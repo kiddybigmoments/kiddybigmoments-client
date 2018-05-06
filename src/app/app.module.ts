@@ -6,14 +6,15 @@ import { AlertModule } from 'ng2-bootstrap';
 import { RouterModule } from '@angular/router';
 
 import { AppComponent } from './app.component';
-import { NavbarComponent } from './navbar/navbar.component';
-import { GalleryComponent } from './gallery/gallery.component';
-import { ImageService } from './image/shared/image.service';
-import { ImageFilterPipe } from './image/shared/filter.pipe';
-import { ImageSearchPipe } from './image/shared/search.pipe';
-import { ImageDetailComponent } from './image/image-detail.component';
+import { NavbarComponent } from './components/navbar/navbar.component';
+import { GalleryComponent } from './components/gallery/gallery.component';
+import { ImageService } from './components/image/shared/image.service';
+import { ImageFilterPipe } from './components/image/shared/filter.pipe';
+import { ImageSearchPipe } from './components/image/shared/search.pipe';
+import { ImageDetailComponent } from './components/image/image-detail.component';
 import { appRoutes } from '../routes';
-import { SearchComponent } from './search/search.component';
+import { SearchComponent } from './components/search/search.component';
+import { HomeComponent } from './component/home/home.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { SearchComponent } from './search/search.component';
     ImageFilterPipe,
     ImageSearchPipe,
     ImageDetailComponent,
-    SearchComponent
+    SearchComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
