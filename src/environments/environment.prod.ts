@@ -1,4 +1,5 @@
 export const environment = {
   production: true,
-  rutaApi: 'https://api.kiddybigmoments.site/api/v1'
+  apiUrl: 'https://api.kiddybigmoments.site/api/v1',
+  landingUrl: 'https://kiddybigmoments.site'
 }

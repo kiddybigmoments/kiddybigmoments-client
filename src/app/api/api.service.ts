@@ -17,7 +17,7 @@ export class ApiService {
   }
 
   private fullUrl(url: string): string {
-    return `${environment.rutaApi}/${url}/`
+    return `${environment.apiUrl}/${url}/`
   }
 
   get<T>(url: string): Observable<T> {
