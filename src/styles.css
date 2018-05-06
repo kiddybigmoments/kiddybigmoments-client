@@ -91,10 +91,11 @@ section h2 {
 
 .btn {
   background-color: #584e5f;
-  border-radius: 20px;
+  border-radius: 10px;
   font-family: 'Lato', 'Helvetica', 'Arial', 'sans-serif';
   letter-spacing: 2px;
   text-transform: uppercase;
+  margin-left: 10px;
 }
 
 .btn-xl {

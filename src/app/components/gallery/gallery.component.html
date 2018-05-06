@@ -1,39 +1,37 @@
 
 
-
-
-
-
-
-
-
-
 <app-navbar></app-navbar>
+<div class="h50"></div>
 
     <header class="masthead">
-      <div class="container h-100">
-        <div class="row h-100">
-          <div class="col-lg-3">
-            <div class="header-content mx-auto">
-              <ul class="list-unstyled components">
-                <li>Buscar por</li>
-                <button class="btn btn-lg btn-info" [class.active]="filterBy=='all'" (click)="filterBy='all'">
-                    <span class="glyphicon glyphicon-play"></span>
+
+      <div class="container ">
+
+        <div class="row" >
+          <div class="col-lg-6"></div>
+          <div class="col-lg-6 right p-5">
+
+
+.
+                <button class="btn btn-sm btn-info" [class.active]="filterBy=='all'" (click)="filterBy='all'">
+
                     All<span class="selected"></span>
                 </button>
-                <button class="btn btn-lg btn-info" [class.active]="filterBy=='photos'" (click)="filterBy='photos'">
-                    <span class="glyphicon glyphicon-play"></span>
+                <button class="btn btn-sm btn-info " [class.active]="filterBy=='photos'" (click)="filterBy='photos'">
+
                     Photos
                 </button>
-                <button class="btn btn-lg btn-info" [class.active]="filterBy=='videos'" (click)="filterBy='videos'">
-                    <span class="glyphicon glyphicon-play"></span>
+                <button class="btn btn-sm btn-info" [class.active]="filterBy=='videos'" (click)="filterBy='videos'">
+
                     Videos
                 </button>
-            </ul>
+
             </div>
           </div>
+          <div class="row">
 
-          <div class="col-lg-9">  <ul id="thumnailslist">
+          <div class="col-lg-12">
+             <ul id="thumnailslist">
             <li *ngFor="let image of (visibleImages | imageFilter:filterBy)">
                 <a [routerLink]="['/image', image.id]">
                     <img src="{{image.url}}" class="tn" width="200" >
