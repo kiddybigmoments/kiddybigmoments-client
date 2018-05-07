@@ -9,15 +9,17 @@ export interface Photo {
 }
 
 export interface Kid {
-  id: number
-  mother: User
-  father: User
   first_name: string
-  last_name: string
+  user_id: number
 }
 
 export interface User {
   username: string
+  password2: string
+  password1: string
+  first_name: string
+  last_name: string
+  email: string
 }
 
 export interface ApiResponse<T> {

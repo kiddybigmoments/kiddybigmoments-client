@@ -1,16 +1,6 @@
-<<<<<<< HEAD:src/app/components/login/login.component.ts
-import { Component, OnInit, Input } from '@angular/core';
-import { Router } from '@angular/router';
-import { LoginExternalService } from '../../services/login.external.service';
-import { LoginForm } from './loginform.model';
-import { Subscription } from 'rxjs/Subscription';
-
-=======
 import { Component, OnInit, Input } from '@angular/core'
 import { Router } from '@angular/router'
-import { LoginExternalService } from '../auth/login.external.service'
->>>>>>> b7164b2b3ad13d72396c37cb557eb842a434ef49:src/app/login/login.component.ts
-
+import { LoginExternalService } from '../../auth/login.external.service'
 import { LoginForm } from './loginform.model'
 import { Subscription } from 'rxjs/Subscription'
 

@@ -1,0 +1,43 @@
+<app-navbar></app-navbar>
+<div class="h50">
+</div>
+
+
+  <div class="row">
+    <table align=center>
+      <tr>
+        <td><img src="./assets/images/logoSinTexto.jpg" height="80px"></td><td><h4>Añade a tu pequeño en Kiddy Big Moments:</h4></td>
+      </tr>
+    </table>
+  </div>
+  <br>
+  <div class=row>
+    <span>
+      Bienvenid@ a la plataforma <strong>"Kiddy Big Moments"</strong>, para comenzar a formar parte de nuestra
+      comunidad es necesario que te registres, <strong>sólo te llevará un par de minutos</strong>,
+      rellena el formulario que aparece a continuación y listo.
+    </span>
+  </div>
+  <br>
+  <form class="register-form" [formGroup]="newKidForm" (ngSubmit)="addNewKid()">
+    <div class="row">
+      <!--<i class="fas fa-user"></i>--><label> Nombre del Niñ@:</label>
+      <input type="text" class="form-control" placeholder="nombre de tu hij@" formControlName="first_name">
+      <span class="alert alert-danger text-alert form-control" *ngIf='newKidForm.get("first_name").touched && newKidForm.get("first_name").invalid'>
+        Este campo es obligatorio.
+      </span>
+    </div>
+    <br>
+    <div class="row">
+      <div class="col text-center">
+        <button type="submit" [disabled]="newKidForm.invalid" class="btn btn-primary">Añadir</button>
+        <button type="reset" class="btn btn-primary">Borrar</button>
+      </div>
+    </div>
+  </form>
+
+
+
+
+
+

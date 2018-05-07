@@ -17,9 +17,9 @@ export class AuthService {
     pass: string,
     token: string
   ): Observable<LoginForm> {
-    this.formulario.user = user:
-    this.formulario.pass = pass;
-    this.formulario.authToken = token;
+    this.formulario.user = user
+    this.formulario.pass = pass
+    this.formulario.authToken = token
     return this.acceso.asObservable()
   }
 

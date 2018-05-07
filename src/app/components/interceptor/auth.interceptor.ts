@@ -1,12 +1,4 @@
-<<<<<<< HEAD:src/app/components/interceptor/auth.interceptor.ts
-import { AuthService } from '../../services/auth.service';
-import { Injectable } from '@angular/core';
-import { HttpErrorResponse, HttpEvent, HttpHandler, HttpInterceptor, HttpRequest } from '@angular/common/http';
-import 'rxjs/add/operator/do';
-import { Observable } from 'rxjs/Observable';
-import { HttpResponse } from '@angular/common/http';
-=======
-import { AuthService } from '../auth/auth.service'
+import { AuthService } from '../../auth/auth.service'
 import { Injectable } from '@angular/core'
 import {
   HttpErrorResponse,
@@ -18,7 +10,6 @@ import {
 import 'rxjs/add/operator/do'
 import { Observable } from 'rxjs/Observable'
 import { HttpResponse } from '@angular/common/http'
->>>>>>> b7164b2b3ad13d72396c37cb557eb842a434ef49:src/app/interceptor/auth.interceptor.ts
 @Injectable()
 export class AuthInterceptor implements HttpInterceptor {
   constructor(private auth: AuthService) {}
