@@ -1,4 +1,4 @@
 interface LoginResponse {
-    token: string;
-    user: string;
-  }
+  token: string
+  user: string
+}

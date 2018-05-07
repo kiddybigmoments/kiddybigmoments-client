@@ -3,28 +3,35 @@ import { Component, OnInit } from '@angular/core';
 import { ImageService } from './shared/image.service';
 import { ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
+import { PhotoService } from '../../photos/photo.service';
+
+import { ApiResponse, Photo } from '../../models';
 
 @Component({
-    selector: 'image-detail',
-    templateUrl: './image-detail.component.html',
-    styleUrls: ['./image-detail.component.css']
+  selector: 'app-image-detail',
+  templateUrl: './image-detail.component.html',
+  styleUrls: ['./image-detail.component.css']
 })
 export class ImageDetailComponent implements OnInit {
+  image: Photo;
 
-    image:any;
-    constructor(
-        private imageService: ImageService,
-        private route: ActivatedRoute,
-        private location: Location) {}
+  constructor(
+    private photoService: PhotoService,
+    private route: ActivatedRoute,
+    private location: Location
+  ) {}
 
-    ngOnInit() {
-        this.image = this.imageService.getImage(
-            +this.route.snapshot.params['id']
-        )
-    }
+  ngOnInit() {
+    this.photoService
+      .getPhoto(this.route.snapshot.params.id)
+      .subscribe((response: Photo) => {
+        if (response) {
+          this.image = response;
+        }
+      });
+  }
 
-    goBack(): void {
-        this.location.back();
-    }
-
+  goBack(): void {
+    this.location.back()
+  }
 }

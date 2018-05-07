@@ -3,8 +3,8 @@ import { LoginFormComponent } from './components/login-form/login-form.component
 import { UserComponent } from './components/user/user.component';
 import { SignUpComponent } from './components/user/sign-up/sign-up.component';
 import { SignInComponent } from './components/user/sign-in/sign-in.component';
-import{HomeComponent} from './components/home/home.component';
-//import { AuthGuard } from './auth/auth.guard';
+import {HomeComponent} from './components/home/home.component';
+// import { AuthGuard } from './auth/auth.guard';
 
 export const appRoutes: Routes = [
   { path: 'home', component: LoginFormComponent },

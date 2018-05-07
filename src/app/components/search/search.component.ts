@@ -1,26 +1,25 @@
-import { Component, OnChanges, Input } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
-import { ImageService } from '../image/shared/image.service';
+import { PhotoService } from '../../photos/photo.service';
+import { ApiResponse, Photo } from '../../models';
 
 @Component({
-    selector: 'search',
-    templateUrl: './search.component.html',
-    styleUrls: ['./search.component.css']
+  selector: 'app-search',
+  templateUrl: './search.component.html',
+  styleUrls: ['./search.component.css']
 })
-export class SearchComponent implements OnChanges{
+export class SearchComponent implements OnInit {
+  title = 'Start typing to search images by caption ...';
 
-    title = 'Start typing to search images by caption ...';
+  @Input() searchBy?: string = 'all';
 
-    @Input() searchBy?: string='all';
+  searchImages: Photo[] = [];
 
-    searchImages: any[] = [];
+  constructor(private photoService: PhotoService) {}
 
-    constructor(private imageService: ImageService) {
-        this.searchImages = this.imageService.getImages();
-    }
-
-    ngOnChanges() {
-        this.searchImages = this.imageService.getImages();
-    }
-
+  ngOnInit() {
+    this.photoService.getPhotos().subscribe((response: ApiResponse<Photo>) => {
+      this.searchImages = response.results;
+    });
+  }
 }

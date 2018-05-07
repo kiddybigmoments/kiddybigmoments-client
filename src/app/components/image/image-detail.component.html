@@ -5,13 +5,13 @@
         <button type="button" id="backBtn" class="btn btn-info-navbar-btn" (click)="goBack()">
             Go Back
         </button>
-        <img src="{{image.url}}" class="img-responsive img-full-size">
+        <img src="{{image.image}}" class="img-responsive img-full-size" *ngIf="image">
     </div>
 </div>
 <div class="row">
     <div class="col-md-12 caption-row">
-        <span id="caption">
-            {{image.caption}}
+        <span id="caption" *ngIf="image">
+            {{image.title}}
         </span>
     </div>
 </div>

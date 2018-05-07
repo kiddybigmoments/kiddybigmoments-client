@@ -4,7 +4,7 @@ import { AuthService } from './auth.service';
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { environment } from '../../environments/environment';
 import 'rxjs/add/operator/map';
-import './../interfaces/login.response.interfaz';
+import '../components/interfaces/login.response.interfaz';
 import { Observable } from 'rxjs/Observable';
 import { Subject } from 'rxjs/Subject';
 import { LoginForm } from '../components/login/loginform.model';
@@ -18,7 +18,7 @@ export class LoginExternalService {
 
   private acceso = new Subject<LoginForm>();
 
-  //Metodo de login de la aplicacion
+  // Metodo de login de la aplicacion
   login(user: string, pass: string): Observable<LoginForm> {
     this.formulario.user = user;
     this.formulario.pass = pass;

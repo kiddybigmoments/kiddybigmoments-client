@@ -1,25 +1,23 @@
-## DEMO
+# kiddybigmoments
 
+<p align="center">
+  <i>Angular client for <a href="https://github.com/kiddybigmoments/kiddybigmoments-server">kiddybigmoments-server</a></i>
+</p>
 
-## Installation
+<p align="center">
+  <img src="https://dzwonsemrish7.cloudfront.net/items/2C0M2U1E0k0m0V411l3l/38319686.png" alt="icon">
+</p>
 
-Assuming you have node, npm and git installed:
+## Install
 
-1. In Git Bash:
-    - $ npm install
+```sh
+npm install            # Install dependencies and build (postinstall)
+npm start              # Serve dist folder
+```
 
-2. Navigate to your src folder in CMD
+## Develop
 
-3. Start application by typing npm start
-
-4. Open http://localhost:4200/ in your browser.
-
-5. If neccessary install bootstrap:
-npm install bootstrap --save
-import the css in .angular-cli.json:
-    "...
-        "styles": [
-            "../node_modules/bootstrap/dist/css/bootstrap.min.css",
-            "styles.scss"
-        ]
-    ..."
+```sh
+npm install            # Install dependencies
+npm run dev            # Run dev server and reload on file changes
+```
