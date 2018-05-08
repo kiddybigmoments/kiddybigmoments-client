@@ -12,6 +12,10 @@ export class RegisterFormService {
   ) {}
 
   addUser(user: User): Observable<User> {
-    return this._apiService.post('rest-auth/registration', user)
+    //return this._apiService.post('rest-auth/registration', user)
+    return this._httpClient.post<User>(
+      'http://localhost:8000/api/v1/rest-auth/registration/',
+      user
+    )
   }
 }

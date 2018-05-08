@@ -15,12 +15,13 @@ export class AddKidUrlComponent {
   ) {}
 
   createNewKid(kid: Kid): void {
-    console.log(kid)
     this._addKidFormService.addKid(kid).subscribe(
       response => {
         this._router.navigate(['/add-kid'])
       },
-      error => {}
+      error => {
+        console.log(error)
+      }
     )
   }
 }

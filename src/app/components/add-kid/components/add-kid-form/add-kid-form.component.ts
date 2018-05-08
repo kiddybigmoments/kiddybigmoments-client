@@ -18,7 +18,7 @@ export class AddKidFormComponent {
 
   formGenerate(): void {
     this.newKidForm = this._formBuilder.group({
-      first_name: ['', Validators.required]
+      name: ['', Validators.required]
     })
   }
 

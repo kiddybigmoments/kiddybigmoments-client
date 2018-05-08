@@ -9,8 +9,7 @@ export interface Photo {
 }
 
 export interface Kid {
-  first_name: string
-  user_id: number
+  name: string
 }
 
 export interface User {

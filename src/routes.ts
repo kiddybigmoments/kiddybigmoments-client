@@ -5,12 +5,13 @@ import { SearchComponent } from './app/components/search/search.component'
 import { HomeComponent } from './app/components/home/home.component'
 import { RegisterUrlComponent } from './app/components/register-url/register-url.component'
 import { AddKidUrlComponent } from './app/components/add-kid-url/add-kid-url.component'
-
+import { UploadPhotoFormComponent } from './app/components/upload-photo/components/upload-photo-form/upload-photo-form.component'
 export const appRoutes: Routes = [
   { path: 'home', component: HomeComponent },
   { path: 'gallery', component: GalleryComponent },
   { path: 'image/:id', component: ImageDetailComponent },
   { path: 'search', component: SearchComponent },
   { path: 'add-kid', component: AddKidUrlComponent },
+  { path: 'upload-photo', component: UploadPhotoFormComponent },
   { path: '', redirectTo: 'home', pathMatch: 'full' }
 ]

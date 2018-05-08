@@ -9,8 +9,8 @@
   <form class="register-form" [formGroup]="newKidForm" (ngSubmit)="addNewKid()">
     <div class="row">
       <!--<i class="fas fa-user"></i>--><label> Nombre del Niñ@:</label>
-      <input type="text" class="form-control" placeholder="nombre de tu hij@" formControlName="first_name">
-      <span class="alert alert-danger text-alert form-control" *ngIf='newKidForm.get("first_name").touched && newKidForm.get("first_name").invalid'>
+      <input type="text" class="form-control" placeholder="nombre de tu hij@" formControlName="name">
+      <span class="alert alert-danger text-alert form-control" *ngIf='newKidForm.get("name").touched && newKidForm.get("name").invalid'>
         Este campo es obligatorio.
       </span>
     </div>
