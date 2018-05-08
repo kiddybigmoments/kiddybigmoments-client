@@ -2,7 +2,7 @@ import { BrowserModule } from '@angular/platform-browser'
 import { NgModule } from '@angular/core'
 import { FormsModule, ReactiveFormsModule } from '@angular/forms'
 import { HttpModule } from '@angular/http'
-import { AlertModule } from 'ng2-bootstrap'
+// import { AlertModule } from 'ng2-bootstrap'
 import { RouterModule } from '@angular/router'
 import { HttpClientModule, HttpClient } from '@angular/common/http'
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap'
@@ -64,7 +64,7 @@ import { RegisterResultComponent } from './components/register/components/regist
     ReactiveFormsModule,
     HttpModule,
     HttpClientModule,
-    AlertModule.forRoot(),
+    //AlertModule.forRoot(),
     NgbModule.forRoot(),
     RouterModule.forRoot(appRoutes)
   ],
