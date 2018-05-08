@@ -10,6 +10,7 @@ import { Router } from '@angular/router'
 })
 export class RegisterUrlComponent {
   public formError: string
+  public success: boolean = false
 
   constructor(
     private _registerFormService: RegisterFormService,
@@ -19,7 +20,7 @@ export class RegisterUrlComponent {
   createNewUser(user: User): void {
     this._registerFormService.addUser(user).subscribe(
       response => {
-        this._router.navigate(['/gallery'])
+        this.success = true
       },
       error => {
         if (error.error.username) {

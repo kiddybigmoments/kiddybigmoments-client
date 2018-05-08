@@ -1,2 +1,5 @@
-<app-register-form (createUserButton)="createNewUser($event)" [formError]="formError">
+<app-register-form *ngIf='!success' (createUserButton)="createNewUser($event)" [formError]="formError">
 </app-register-form>
+
+<app-register-result *ngIf='success'>
+</app-register-result>

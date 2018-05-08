@@ -35,6 +35,9 @@ import { RegisterFormService } from './components/register/services/register-for
 import { AddKidUrlComponent } from './components/add-kid-url/add-kid-url.component'
 import { AddKidFormComponent } from './components/add-kid/components/add-kid-form/add-kid-form.component'
 import { AddKidFormService } from './components/add-kid/services/add-kid-form.service'
+import { RegisterResultComponent } from './components/register/components/register-result/register-result.component'
+import { UploadPhotoFormComponent } from './components/upload-photo/components/upload-photo-form/upload-photo-form.component'
+import { UploadPhotoUrlComponent } from './components/upload-photo-url/upload-photo-url/upload-photo-url.component'
 
 @NgModule({
   declarations: [
@@ -58,7 +61,10 @@ import { AddKidFormService } from './components/add-kid/services/add-kid-form.se
     RegisterFormComponent,
     RegisterUrlComponent,
     AddKidFormComponent,
-    AddKidUrlComponent
+    AddKidUrlComponent,
+    RegisterResultComponent,
+    UploadPhotoFormComponent,
+    UploadPhotoUrlComponent
   ],
   imports: [
     BrowserModule,
