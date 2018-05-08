@@ -1,11 +1,10 @@
+import { Component, OnInit } from '@angular/core'
+import { ImageService } from './shared/image.service'
+import { ActivatedRoute } from '@angular/router'
+import { Location } from '@angular/common'
+import { PhotoService } from '../../services/photo.service'
 
-import { Component, OnInit } from '@angular/core';
-import { ImageService } from './shared/image.service';
-import { ActivatedRoute } from '@angular/router';
-import { Location } from '@angular/common';
-import { PhotoService } from '../../photos/photo.service';
-
-import { ApiResponse, Photo } from '../../models';
+import { ApiResponse, Photo } from '../../models'
 
 @Component({
   selector: 'app-image-detail',
@@ -13,7 +12,7 @@ import { ApiResponse, Photo } from '../../models';
   styleUrls: ['./image-detail.component.css']
 })
 export class ImageDetailComponent implements OnInit {
-  image: Photo;
+  image: Photo
 
   constructor(
     private photoService: PhotoService,
@@ -26,9 +25,9 @@ export class ImageDetailComponent implements OnInit {
       .getPhoto(this.route.snapshot.params.id)
       .subscribe((response: Photo) => {
         if (response) {
-          this.image = response;
+          this.image = response
         }
-      });
+      })
   }
 
   goBack(): void {

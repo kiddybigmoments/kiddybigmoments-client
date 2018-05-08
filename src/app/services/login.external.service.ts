@@ -16,17 +16,17 @@ export class LoginExternalService {
 
   private acceso = new Subject<LoginForm>()
 
-  // Metodo de login de la aplicacion
+  //Metodo de login de la aplicacion
   login(user: string, pass: string): Observable<LoginForm> {
     this.formulario.user = user
     this.formulario.pass = pass
     const req = this._http.post<LoginResponse>(
-      `${environment.apiUrl}/auth/login`,
+      `${environment.apiUrl}/get-token/`,
       { username: user, password: pass }
     )
     req.subscribe(
       res => {
-        this.formulario.authToken = 'Beared ' + res.token
+        this.formulario.authToken = 'Bearer ' + res.token
 
         this.acceso.next(this.formulario)
         this.authService.actualizarAutorizacion(

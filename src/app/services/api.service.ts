@@ -6,7 +6,7 @@ import {
 } from '@angular/common/http'
 import { Observable } from 'rxjs/Observable'
 
-import { AuthService } from '../auth/auth.service'
+import { AuthService } from './auth.service'
 import { environment } from '../../environments/environment'
 
 @Injectable()

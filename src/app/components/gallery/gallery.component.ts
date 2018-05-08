@@ -1,7 +1,7 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core'
 
-import { PhotoService } from '../../photos/photo.service';
-import { ApiResponse, Photo } from '../../models';
+import { PhotoService } from '../../services/photo.service'
+import { ApiResponse, Photo } from '../../models'
 
 @Component({
   selector: 'app-gallery',
@@ -14,9 +14,9 @@ export class GalleryComponent implements OnInit {
 
   visibleImages: any[] = []
 
-  private toggle = false;
+  private toggle = false
   classes: string[] = []
-  show = false;
+  show = false
 
   constructor(private photoService: PhotoService) {}
 

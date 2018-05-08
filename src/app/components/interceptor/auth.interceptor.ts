@@ -1,4 +1,3 @@
-import { AuthService } from '../../auth/auth.service'
 import { Injectable } from '@angular/core'
 import {
   HttpErrorResponse,
@@ -10,6 +9,8 @@ import {
 import 'rxjs/add/operator/do'
 import { Observable } from 'rxjs/Observable'
 import { HttpResponse } from '@angular/common/http'
+import { AuthService } from '../../services/auth.service'
+
 @Injectable()
 export class AuthInterceptor implements HttpInterceptor {
   constructor(private auth: AuthService) {}
