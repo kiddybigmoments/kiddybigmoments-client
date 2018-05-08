@@ -1,6 +1,8 @@
 import { Component, Output, EventEmitter } from '@angular/core'
 import { FormGroup, FormBuilder, Validators } from '@angular/forms'
 import { Photo } from '../../../../models/index'
+import { ApiService } from '../../../../api/api.service'
+import { THROW_IF_NOT_FOUND } from '@angular/core/src/di/injector'
 
 @Component({
   selector: 'app-upload-photo-form',
@@ -9,9 +11,13 @@ import { Photo } from '../../../../models/index'
 })
 export class UploadPhotoFormComponent {
   public uploadForm: FormGroup
-  @Output() public uploadPhotoButton = new EventEmitter<Photo>()
+  selectedFile: File = null
+  //@Output() public uploadPhotoButton = new EventEmitter<Photo>()
 
-  constructor(private _formBuilder: FormBuilder) {
+  constructor(
+    private _formBuilder: FormBuilder,
+    private _apiService: ApiService
+  ) {
     this.formGenerate()
   }
 
@@ -24,8 +30,17 @@ export class UploadPhotoFormComponent {
     })
   }
 
+  onFileSelected(event) {
+    this.selectedFile = <File>event.target.files[0]
+  }
+
   private uploadPhoto(): void {
-    let image = this.uploadForm.value as Photo
-    this.uploadPhotoButton.emit(image)
+    //let image = this.uploadForm.value as Photo
+    //this.uploadPhotoButton.emit(image)
+    const fd = new FormData()
+    fd.append('image', this.selectedFile, this.selectedFile.name)
+    this._apiService.post('photos', fd).subscribe(res => {
+      console.log(res)
+    })
   }
 }

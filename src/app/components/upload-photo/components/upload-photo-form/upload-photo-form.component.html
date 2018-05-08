@@ -2,21 +2,24 @@
   <div class="row">
       <label for="">Título:</label>
       <input type="text" class="form-control" placeholder='Escribe un título para tu foto' formControlName='title'>
-      <span class="alert alert-danger text-alert">
+      <span class="alert alert-danger text-alert" *ngIf='uploadForm.get("title").touched && uploadForm.get("title").invalid'>
         Este campo es OBLIGATORIO
       </span>
   </div>
+  <br>
   <div class="row">
       <label for="">Descripción:</label>
       <input type="text" class="form-control" placeholder='Escribe una descripción para tu foto' formControlName='description'>
-      <span class="alert alert-danger text-alert">
+      <span class="alert alert-danger text-alert" *ngIf='uploadForm.get("description").touched && uploadForm.get("description").invalid'>
         Este campo es OBLIGATORIO
       </span>
   </div>
+  <br>
   <div class="row">
       <label for="">Imagen:</label>
-      <input type="file" formControlName='image'>
+      <input type="file" class="form-control" (change)='onFileSelected($event)' formControlName='image'>
   </div>
+  <br>
   <div class="row">
       <button type="submit" [disabled]="uploadForm.invalid" class="btn btn-primary">Subir</button>
   </div>
