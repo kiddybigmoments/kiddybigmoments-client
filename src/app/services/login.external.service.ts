@@ -16,7 +16,7 @@ export class LoginExternalService {
 
   private acceso = new Subject<LoginForm>()
 
-  //Metodo de login de la aplicacion
+  // Metodo de login de la aplicacion
   login(user: string, pass: string): Observable<LoginForm> {
     this.formulario.user = user
     this.formulario.pass = pass
