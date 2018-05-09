@@ -4,7 +4,7 @@ import { ActivatedRoute } from '@angular/router'
 import { Location } from '@angular/common'
 import { PhotoService } from '../../services/photo.service'
 
-import { ApiResponse, Photo } from '../../models'
+import { Photo } from '../../models'
 
 @Component({
   selector: 'app-image-detail',

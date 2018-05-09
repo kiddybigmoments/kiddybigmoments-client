@@ -1,7 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core'
 
 import { PhotoService } from '../../services/photo.service'
-import { ApiResponse, Photo } from '../../models'
+import { Photo } from '../../models'
 
 @Component({
   selector: 'app-search',
@@ -18,8 +18,8 @@ export class SearchComponent implements OnInit {
   constructor(private photoService: PhotoService) {}
 
   ngOnInit() {
-    this.photoService.getPhotos().subscribe((response: ApiResponse<Photo>) => {
-      this.searchImages = response.results
+    this.photoService.getPhotos().subscribe((response: Photo[]) => {
+      this.searchImages = response
     })
   }
 }

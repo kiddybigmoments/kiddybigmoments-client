@@ -21,10 +21,3 @@ export interface User {
   last_name: string
   email: string
 }
-
-export interface ApiResponse<T> {
-  count: number
-  next?: any
-  previous?: any
-  results: [T]
-}

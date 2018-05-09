@@ -1,7 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core'
 
 import { PhotoService } from '../../services/photo.service'
-import { ApiResponse, Photo } from '../../models'
+import { Photo } from '../../models'
 
 @Component({
   selector: 'app-gallery',
