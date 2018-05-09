@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core'
+import { Router } from '@angular/router'
 
 @Component({
   selector: 'app-register-result',
@@ -6,7 +7,11 @@ import { Component, OnInit } from '@angular/core'
   styleUrls: ['./register-result.component.css']
 })
 export class RegisterResultComponent implements OnInit {
-  constructor() {}
+  constructor(private router: Router) {}
 
-  ngOnInit() {}
+  ngOnInit() {
+    setTimeout(() => {
+      this.router.navigate(['/gallery'])
+    }, 2000)
+  }
 }

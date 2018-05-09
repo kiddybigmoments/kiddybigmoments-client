@@ -25,11 +25,9 @@ export class GalleryComponent implements OnInit {
   }
 
   loadPhotos(criteria: object = {}) {
-    this.photoService
-      .getPhotos(criteria)
-      .subscribe((response: ApiResponse<Photo>) => {
-        this.visibleImages = response.results
-      }, this.photoService.handleHttpError)
+    this.photoService.getPhotos(criteria).subscribe((response: Photo[]) => {
+      this.visibleImages = response
+    }, this.photoService.handleHttpError)
   }
 
   clickEvent() {
